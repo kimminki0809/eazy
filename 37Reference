@@ -1,0 +1,105 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+    public int HP = 100;
+    public int AT = 10;
+
+
+    public bool IsDeath(){
+
+        return HP <= 0; //HP가 0아래로 떨어지면 true를 리턴해주는 함수임.
+    }
+}
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+        
+        static void PlayerTest(Player _Test){
+
+            _Test.AT = 10000;
+        }
+
+        static void ClassTest(Player _Test){
+
+            _Test.AT = 10000;
+        }
+
+        static void ArrTest (int[] _ArrTest){
+
+            _ArrTest[0] = 99999;
+        }
+
+
+        static void ATTest(Player _Test){
+            Console.WriteLine("공격력을 테스트합니다.")
+            _Test.AT = 52332;
+        }
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        static void Main(String[] args){
+
+            Player Newplayer = new Player(); //힙영역을 가리키는 Player Newplayer 게이.
+            //가리키는 역할 밖에 못하는 게이지만 가리키는 것 만큼은 잘해서 다른 것을 가리킬 수 도 있다.
+
+
+            Newplayer.AT = 50; //Newplayer 게이가 가리키는 힙 영역의 new Player게이의 AT값을 50으로 바꿨다.
+
+            Player Newplayer2 = Newplayer;
+            //같은 곳을 가리키는게 2개임. 
+            //하나는 NewPlayer 다른 하나는 NewPlayer2.
+
+
+            NewPlayer2.AT = 999;
+            //NewPlayer2.AT = null; 이것 구문은 오류가 생김.
+
+            
+            Player NewPlayer3 = null; //아무 것도 가리키지 않음.
+            NewPlayer3.IsDeath();
+
+
+
+
+
+
+            
+            PlayerTest(Newplayer); //이 코드는 AT가 10000이 되서 나옴. 레퍼런스 형이기에.
+
+
+
+            Newplayer = new Player(); 
+            //새로운 new player 게이가 생기고 Newplayer게이는 새로 생긴 new player게이를 가리킨다.
+            //고로 AT는 10이 출력됨.
+            //원래 있던 new Player 게이는 영영 못찾는 우주미아가 된다...
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            //배열을 만들자마자 초기화하는 방법. 
+            //1. 모든 값을 직접대입
+            int[] ArrNumber = new int[10]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9,};
+
+
+            //2
+            ArrTest(ArrNumber); //배열은 레퍼런스 형임을 알 수 있음.
+
+
+
+
+            ATTest(null); // 이 구문은 타입이 null 이기에 _Test.AT = 52332;의 값을 못 받음.
+
+        }
+    }
+}
+

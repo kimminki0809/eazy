@@ -1,0 +1,107 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//property(속성)의 장점.
+//외부에서 접근할 수 있도록 하면서 동시에 캡슐화를 지원하는 언어의 한 요소이다.
+
+
+
+//우선 앞서 말했듯이 객체지향언어는 정보은닉을 지향하는 언어이다.
+//정보은닉이란 객체 내부의 데이터를 외부에 보이지 않게 하지 않음으로써 해당 클래스의 내부 구현 로직을 모르고도 어떠한 메소드를 호출하여 사용할 수 있게 한다는 것이다. 
+//예를 들어 보통 점수는 0~100점의 값을 갖는 int형 변수이다. 그렇기에 해당 score라는 변수의 값에 101을 넣으면 오류이다.
+//이러한 상황에서 get set을 사용하여 우리는 예제1의 내용처럼 해당 변수에 set에 조건을 달아줘서 0~100점의 값만 가질수 있게끔 설정할 수 있다.
+//이것이 바로 get set의 사용 이유이다.
+
+
+class Player{
+
+
+    //값을 수정한다, 값을 리턴한다. 하는 함수를 get과 set을 문법적으로 편하게 만들어 둠
+    //프로퍼티를 하기 싫어서 get set을 하는 거라 볼 수 있음.
+    //어떤 맴버변수나 자료형 하나를 타겟으로 삼고 get set함수를 사용
+
+
+
+    //보통 이러한 맴버 변수가 타겟이다.
+    int AT = 10;
+
+    public int ProAT{//int라는 자료형을 선언해줬으면 이는 int와 관련된 함수라고 명시하는 것이다. 
+    //ProAT는 맴버변수
+        get{//프로퍼티의 GET함수는 무조건 int를 리턴한다고 보고 아래와 같이 축약하여 쓸 수 있게 해줌. //리턴하는 역할.
+
+         if (999 < AT){
+            Console.WriteLine("최대 수정치를 넘겼습니다.");
+            while(true) {Console.ReadKey();}
+        }
+
+        return AT;
+
+        }set{//set은 무조건 int하나가 들어온다고 생각하는게 좋음: 설정하는 함수다보니. 외부 값들을 프로퍼티에서는 value라고 기호로 정의함.
+
+        AT = value;//외부에서 어떤 값을 줬건 value가 된다.
+
+        }
+    }
+
+
+
+    public static int m_StaticValue = 100;
+
+    public static int StaticValue{//정적프로퍼티
+        get{
+            return m_StaticValue;
+
+        }set{
+            
+            m_StaticValue = value;
+
+        }
+    }
+
+    
+
+    // public int GetAT(){//외부에 알려주는 함수.
+    //     return AT; 
+    // }
+
+    // public void SetAT(int _Value){// 수정하는 함수.
+        
+    //     if (999 < _Value){
+    //         Console.WriteLine("최대 수정치를 넘겼습니다.");
+    //         while(true) {Console.ReadKey();}
+    //     }
+        
+    //     AT = _Value;
+    // }
+
+   
+    }
+
+
+namespace _26Property{
+
+    class Program{
+
+        static void Main(String[] args){
+            Player NewPlayer = new Player();
+
+            Player.StaticValue = 200;
+
+            //NewPlayer.SetAT(9999);  SetAT에 입력되는 함수
+
+            NewPlayer.ProAT = 100; //인자값이 필요없음.
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

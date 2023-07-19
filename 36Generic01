@@ -1,0 +1,133 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+}
+
+
+
+//정적변수와 정적함수만을 내부에 지닐 수 있음 : 즉 생성자 또한 못가짐.
+public static class GTest{
+
+    // public GTest(){ : 생성자는 못가짐
+
+
+    // }
+
+
+
+//제네릭 함수
+//맴버함수에도 통용된다.
+
+
+    public static void ConsolePrint(int _Value){
+
+        Console.WriteLine(_Value);
+    }
+
+//자료형을 변수처럼 사용하고 싶을때
+//함수의 식별자 뒤에 <정한 이름>을 입력해준다.
+//반환값에도 입력가능
+
+    public static T ConsolePrint<T>(T _Value){
+
+        Console.WriteLine(_Value);
+
+        return _Value;
+    }
+
+
+     public static T ConsolePrint<T, U>(T _Value1, U _Value2){
+
+        Console.WriteLine(_Value1);
+
+        Console.WriteLine(_Value2);
+
+        return _Value1; // 또는 return _Value2; (T 타입 또는 U 타입 중 선택)
+    }
+
+//인자값을 여러개 쓸 수도 있으며 오버로딩도 됨.
+
+public void Test(int _Number){
+}
+}   
+
+
+
+
+
+class Inven<T>{
+
+
+    T[] ArrInvenItem;
+
+    public void ItemIn(T _Item)
+    {
+        //바라는 기능
+    }
+
+    // GameItem[] ArrInvenItem;
+    // cashItem[] ArrInvenItem; 두 줄은 함수가 유사하므로
+    // 제네릭 클래스를 사용한다.
+}
+
+
+
+
+class CashItem{
+}
+
+class GameItem{
+}
+
+
+
+
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            GTest.ConsolePrint(1000); //인자값을 정수로 넣어주면 함수가 정수형으로 형변환을 한다.
+            GTest.ConsolePrint(1.3124234f);
+            GTest.ConsolePrint("야기분좋다");
+
+
+
+
+            GTest.Test(523);
+
+            //GTest.ConsolePrint<> // 제네릭 함수
+
+            Inven<GameItem> NewGameItemInven = new Inven<GameItem>(); //<>괄호 안의 클래스를 확실히 넣어주어야함.
+            
+            GameItem NewItem = new GameItem();
+            NewGameItemInven.ItemIn(NewItem);
+            // 위 세줄의 GameItem을 CashItem 등으로 바꾸면 ItemIn 함수에 들어가는 인자값이 변하게 됨.
+            // 성능좋은 제네릭함수.
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

@@ -1,0 +1,81 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//일반 함수만 되는 것이 아닌 스태틱함수, 생성자 또한 오버로딩이 가능함
+class Player{
+
+    public enum DMGTYPE //class struct enum에 앞에 붙는 형식제한 지정자
+    {
+        PYDMG,
+        FIREDMG,
+        ICEDMG
+        
+    }
+
+
+    int FireDef;
+    int IceDef;
+    int AttDef;
+
+    //컴퓨터는 함수 이름이 달라야 다르게 인식함
+    public void Damage(int _Damage){//함수오버로딩: Damage int 로 컴파일러가 해석함
+
+
+    }
+
+    public void Damage(int _Damage, DMGTYPE _Type){//Damage int DMGTYPE 라고 컴파일러가 해석함
+
+
+        switch (_Type){
+
+            case DMGTYPE.PYDMG:
+            _Damage =- AttDef:
+            break;
+
+            case DMGTYPE.FireDMG:
+            _Damage =- FireDef;
+            break;
+
+            case DMGTYPE.ICEDMG:
+            _Damage =- IceDef;
+            break;
+
+            default:
+            break;
+
+            Damage(_Damage);
+
+        }
+
+
+    }
+
+   
+    }
+
+
+
+
+
+namespace _29Overloading{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            NewPlayer.Damage(100, DMGTYPE.FIREDMG)
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

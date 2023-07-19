@@ -1,0 +1,34 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//01
+//객체지향 내가 표현하고 싶은걸 Class로 만들어서
+//그 Class로 객체를 만드는 프로그래밍이다.
+//class는 즉 설계도이다
+//class는 개념의 표현
+
+
+//02
+//클래스 = 식별자
+//어떠한 코드의 내용을 묶는 하나의 명칭
+//식별자의 문제는 사용할 때 > 해결 방법으로 Namespace가 있다.
+//Namespace는 개념의 분류
+//Using도 일종의 Namespace라고 볼 수 있다.
+
+namespace APro{
+
+    class Potion{//A프로그래머
+
+}
+}
+
+
+namespace BPro{
+
+class Potion{//B프로그래머
+    
+}
+}

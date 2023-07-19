@@ -1,0 +1,112 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+public class Player{
+
+    Private int HP = 100;
+    Private int AT = 10;
+    //Private은 자기 class안에서만 사용 가능 > 즉, static 함수에서도 사용가능
+    //접근제한 지정자의 영향을 받지 않는다.
+
+    //정적맴버변수는 객체에 귀속된 것이 아니라 클래스 그 자체에 귀속 된다는 특성으로 인해
+    //접근제한 지정자의 영향을 받지 않는 것이다.
+
+
+
+
+    static public void PVP(Player _NewPlayer1, Player _NewPlayer2){
+        //자기 클래스 내부 임에도 자신의 클래스를 받아서 사용 가능
+
+        _NewPlayer1.HP -= _NewPlayer2.AT;
+        _NewPlayer2.HP -= _NewPlayer1.AT;
+
+
+    }
+
+
+
+
+    public void Damage(Player _Other){ //Damage함수를 사용할려면 객체화를 만드시 해야함 
+    //> Newplayer.Damage형태로 객체를 호출해줘야 함수를 사용 가능.
+
+        HP =- _Other.AT;
+
+    }
+
+   
+}
+
+public class Monster{
+
+    static public void PVE(Player _NewPlayer1, Player _NewPlayer2){ 
+     //오류 구문: static함수라고 해서 타 클래스의 변수를 받아올 수는 없음
+
+     //Player 클래스의 AT와 HP에 접근 불가.
+
+    
+     
+
+    
+        
+
+        _NewPlayer1.HP -= _NewPlayer2.AT;
+        _NewPlayer2.HP -= _NewPlayer1.AT;
+
+
+    }
+
+}
+
+
+
+
+
+
+//함수 안에 있는 변수를 지역변수 라고 한다. //클래스 안에 있으면 멤버변수
+
+namespace _14StaticFunc{
+
+    class Program{
+
+        static void Main(String[] args){//정적함수
+        //static void Main(String[] args)의 해석
+        //어떤 클래스에 존재하는 Main인 이름을 가진 어떤 정적맴버함수에서 부터 C#프로그램은 시작한다.
+        
+
+
+        //f12를 누르면 해당 클래스의 세부내용을 알 수 있게 된다.
+        //WriteLine은 정적맴버함수이다. : 클래스 명으로만 사용 할 수 있는 함수는 전부 정적맴버함수라고 생각할 수 있다.
+        Console.WriteLine("StaticFunc 배우고 있어요");
+
+
+
+        Player NewPlayer1 = new Player();
+        Player NewPlayer2 = new Player();
+        
+
+        Player.PVP(NewPlayer1, NewPlayer2);//정적맴버변수 이기에 객체를 호출하지 않고 
+        //클래스.함수(인자값)의 형태로 사용 가능 : 클래스 명으로만 사용한것.
+        
+        
+        
+        NewPlayer1.Damage(NewPlayer2);//맴버함수 이기에 NewPlayer이라는 객체를 함수 선두에 붙여 호출해줌
+
+
+
+        Monster.PVE(NewPlayer1, NewPlayer2);
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

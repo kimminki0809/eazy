@@ -1,0 +1,57 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+}
+
+
+
+
+
+//홀수만 출력하는 함수.
+class Program{
+
+    static void Main(String[] args){
+
+        for (int i = 0; i < 100; i++)
+        {
+            if (0 == i % 2){
+
+                continue;//continue를 만나면 즉시 for문의 증감문, while문의 조건문으로 이동한다.
+            }
+
+            Console.WriteLine(i);
+            
+
+
+        }
+
+
+        for (int i = 0; i < 100; i++)
+        {
+            if (i == 50)
+            {
+                break; //i가 50이면 즉시 for문의 증감문으로 이동, while문의 조건문으로 이동
+            }
+
+            console.WriteLine(i);
+            
+        }
+
+
+            
+
+
+    }
+}
+
+
+
+
+

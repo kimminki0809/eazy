@@ -1,0 +1,41 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//07 접근제한지정자
+class Player{//클래스의 내부
+    public int ATT;//외부에도 공개
+    private int HP;//내부에만 공개
+    protected int DEF;//자식에게만 공개
+
+    //객체지향의 캡슐화 은닉화를 대표하는 문법
+    //접근제한 지정자
+    //int ATT; 같은 경우에는 ATT를 외부에 공개하지 않는다.(기본 값이 private)
+
+
+    public void Fight(){
+        Colsole.WriteLine("주먹질");
+    }
+}
+
+//클래스의 외부
+
+
+class Program{//클래스
+    static void Main(String[] args){//시작용 함수
+    
+
+
+    Player NewPlayer = new Player();
+    
+
+//접근제한지정자를 Public으로 설정했기에 타 클래스에서 사용이 가능
+    NewPlayer.ATT = 1000;
+    NewPlayer.Fight();
+
+
+
+    }
+}

@@ -1,0 +1,33 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

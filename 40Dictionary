@@ -1,0 +1,151 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+// `TKey`와 `TValue` 자리에는 다양한 데이터 형식들이 들어올 수 있습니다. 
+// 이들은 개발자가 사용하는 데이터 형식에 따라 결정됩니다. 일반적으로 사용되는 데이터 형식을 몇 가지 예시로 설명해드리겠습니다:
+
+// `TKey`로 사용될 수 있는 예시:
+// - 정수형: `int`, `long`, `uint`, `ulong` 등
+// - 부동소수점형: `float`, `double`, `decimal` 등
+// - 문자형: `char`, `string` 등
+// - 열거형: `enum` 등
+// - 사용자 정의 형식: 클래스, 구조체 등
+
+// `TValue`로 사용될 수 있는 예시:
+// - 정수형: `int`, `long`, `uint`, `ulong` 등
+// - 부동소수점형: `float`, `double`, `decimal` 등
+// - 문자형: `char`, `string` 등
+// - 불리언형: `bool` 등
+// - 사용자 정의 형식: 클래스, 구조체 등
+
+// 실제로 `TKey`와 `TValue`에는 많은 데이터 형식이 사용될 수 있으며, 
+// 개발자는 해당 데이터 형식에 맞게 `Dictionary`의 제네릭 매개변수를 지정할 수 있습니다. 
+// 예를 들어, `Dictionary<string, int>`는 문자열을 키로, 정수를 값으로 가지는 `Dictionary`를 의미합니다. 
+// 마찬가지로 다른 데이터 형식에 대해서도 `TKey`와 `TValue`를 적절하게 지정할 수 있습니다.
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            Dictionary<string, int> NewDic = new Dictionary<string, int>();
+
+
+            //연관 복합
+
+            //string 키
+            //int 벨류(데이터)
+
+            NewDic.Add("일이에요", 1); //string형태인 키를 배열 처럼 사용가능하다.
+            NewDic.Add("이에요", 2);
+            NewDic.Add("뭘까요", 87657);
+
+            string Key = "당연히 없는 값 테스트용";
+
+            if (true == NewDic.ContainsKey(key)){//리턴값: bool
+
+                Console.WriteLine(NewDic[key]);
+            }
+            //함수의 정의 : bool Dictionary<string, int>.ContainsKey(string key)
+            //Containskey 함수는 key가 있는지 없는지를 찾음
+            
+            //만약에 같은 키에 다른 벨류 2개가 있으면 출력이 안됨
+
+
+
+            Console.WriteLine(NewDic["일이에요"]);
+            //인덱서 = 연산자겹지정
+
+            //Dictionary는 찾는 것에 특화됨
+
+
+
+            NewDic.Remove("이에요"); //키를 받아서 제거함
+
+
+
+
+
+
+
+
+
+
+
+            //방어코드
+            if(false == NewDic.ContainsKey("일이에요")){
+
+                NewDic.Add("일이에요", 1);
+            }
+
+
+
+
+
+            Dictionary<string, int> NewDic = new Dictionary<string, int>();
+
+            public void Add(String _Name, int Value){
+
+                if (true == NewDic.ContainsKey(_Name)){
+
+                    return;
+                }
+
+                NewDic.Add(_Name, Value);
+
+            }
+
+
+
+
+
+            public void Print(String _Name){
+
+                if (false == NewDic.ContainsKey(_Name)){ //없는 애들은 그대로 return하고 있는 애들만 프린트하게 해줌
+
+                    return;
+                }
+
+                Console.WriteLine(NewDic[_Name]); 
+            }
+
+
+            NewTest.Print("이에요"); //O
+            NewTest.Print("일이에요"); //O
+            NewTest.Print("권양숙운지"); //X
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

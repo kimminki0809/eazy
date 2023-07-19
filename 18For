@@ -1,0 +1,73 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //for문이나 while문은 함수 안에서는 얼마든지 사용할 수 있다.
+
+            //for(초기화문; 조건문; 증감문) 
+            // {
+            //     실행코드
+            // }
+            //for문의 장점은 접근성
+            //초기화문 > 조건문 > 실행코드 > 증감문 > 조건문 > 실행코드 > 증감문 >...
+
+            //i++; 정수형 일때의 단항 연산자
+            //단항 연산자: 변수 하나와 연산자만 있으면 실행되는 연산자를 단항연산자라 함
+            //정수형일때  ++: 1증가 --:1감소
+
+
+            for (int i = 0; i < length; i++)
+            {
+
+                
+            }
+
+
+
+            //변수 선언, 초기화, 조건 비교, 변수 변화 코드를 한 줄에 담았다.
+
+
+            void Func(while(true)){ // < 오류가 생기는 이유
+            //함수의 인자값은 메모리화 되고 값이 변할 수 있어야 한다.
+
+            //while문은 반환하거나 내포하는 구문이 아니다.
+            
+
+
+            for ( ;true; ){ //< 초기화 문과 조건문이 true 이므로 무한반복됨.
+
+
+            }
+
+
+            }
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

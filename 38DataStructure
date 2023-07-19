@@ -1,0 +1,164 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class MyDataStruct<T>{ 
+    //넣는다는 행동: 여러 가지를 넣을 수 있게 끔: 제네릭 함수
+    
+    public void Push(T _Data){
+
+        if(/*자료가 들어왔을때 내 사이즈를 오버하면*/){
+
+            MDS.Ex(/*적절한 수*/); //Ex는 이렇게도 쓰임
+        }
+
+        
+
+
+    }
+
+    public int Find(T _Data){
+
+
+
+        return 100; //몇 번째에 있다... 100번째에 있다?
+
+        
+    }
+
+    public void Ex(int _Size){
+
+        
+    }
+
+    
+
+    
+
+
+
+
+
+//1. 넣는다. ()
+//2. 탐색. ()
+//3. 확장한다. ()
+//기능의 함수를 구현
+
+
+
+
+
+
+    //자료구조에 대해 알아보자
+//자료구조 만들기: 프로그래머의 기초소양
+
+//자료구조
+//데이터 값의 모임, 데이터 값의 관계, 데이터에 적용할 수 있는 함수나 명령을 의미
+
+//수많은 NPC 중에 노무현이란 NPC를 어떻게 찾는가
+
+
+
+
+
+
+
+
+//자료구조에는 컨테이너라는 용어를 사용한다.
+//시퀸스 컨테이너 
+//차곡차곡 쌓이는 것 List(c#), vector(c#은 없음)가 있으면 시퀸스
+
+
+
+//SortedList 이건 연관임.
+//연관 컨테이너   //자료순서를 자기가 바꿈 : ex) 수가 작은 수 대로
+//Dictionary(C# 해쉬 맵), map(C++)
+
+
+
+//어뎁터 컨테이너 stack queue
+
+
+
+
+
+
+
+
+//데이터의 메모리 구조는
+//1. 배열형: 자료가 붙어있다.
+//2. 노드형이 있다. :자료가 연결된 다음 자료를 알고 있음. (규칙이 일정하지 않음)
+
+
+
+
+
+
+
+
+
+//자료구조에는 다음의 구조나 인터페이스를 지원한다.
+//함수로 표현
+
+//1. 넣는다. ()
+//2. 탐색. ()
+//3. 확장한다. () ... 배열은 중간확장이 안됨
+
+int[] Arr2 = Arr; 
+Arr = new int[15]; 
+//이와 같은 코드를 작성해주면 Arr 배열이 Arr2로 복사가 된다.
+
+
+
+
+}
+
+
+
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _38DataStructer{
+
+    class Program{
+
+        static void Main(String[] args){
+
+
+            int[] Arr = new int[10];
+            //자료구조이다
+
+
+            MyDataStruct<int> MDS = new MyDataStruct<int>(); //int를 관리하는 자료구조형
+            
+            MDS.Push(100);
+            
+            MDS.Find(100);
+
+            MDS.Ex(5000);
+
+
+            
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

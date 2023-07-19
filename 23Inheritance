@@ -1,0 +1,117 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+//접근 제한 지정자
+//           public    protected     private
+//   범위    외부까지    자식까지      나까지
+//상속하고 있는건 자식이라고 취급. > 즉 protected 접근 제한 지정자를 사용하면 공유가 됨.
+
+class FightUnit{
+
+    protected int AT = 10;
+    protected int HP = 100;
+
+
+    public void Damage(FightUnit _OtherUnit){
+
+        // Player OtherPlayer = _OtherUnit; //다운캐스팅
+        // //다운캐스팅을 최대한 지양하라.
+        // //다운캐스팅은 자신이 상속 내려준 자식이라면 무엇이든지 변할 수 있다. : 위험
+
+
+        // HP -= _OtherUnit.AT;
+
+
+    }
+}
+
+
+
+
+
+class Player : FightUnit{
+
+
+    public void heal()(
+
+        HP += 100;  
+    )
+
+    
+
+   
+}
+
+class _Monster : FightUnit{
+
+
+    
+}
+
+
+
+
+
+
+
+
+namespace _23Inheritance{
+
+    //C#에선 오직 단 하나의 클래스만 상속 받을 수 있음.
+    //이중 상속이 불가함
+
+    //클래스상속이란 코드 재활용 성을 향상시키기 위해서
+    //= 같은 코드 2번 치기 싫어서.
+    //클래스상속은 클래스를 기반으로 작동
+    
+
+    //새로운 클래스에 그 모든 맴버변수와 함수를 넣는다. = 상속시킨다.
+
+
+class Program{
+
+        static void Main(String[] args){
+
+            Player NewPlayer = new Player();
+
+            Monster NewMonster = new Monster();
+
+            //NewPlayer.Damage(NewMonster);//상속 덕분에 NewMonster가 들어갈 수 있음
+
+            FightUnit 노 = NewMonster;//NewMonster class의 개인적인 내용은 포기하고 부모클래스인 FightUnit의 성질만 남겨서
+            //FightUnit 노 = NewMonster 코드가 가능한 것임.
+            //이 자식 클래스 만의 성질을 버리고 부모 클래스만의 성질을 남기는 것을 
+            //업캐스팅 이라고 한다.
+            NewPlayer.Damage(노); //> 이 두줄은 NewPlayer.Damage(NewMonster)로 바꿀 수 있음.
+
+
+
+            //다운캐스팅
+            //FightUnit지만 Player의 기능을 쓰고 싶을때 사용한다.
+            //상속하면 앞의 클래스에 부모 클래스가 있고 뒤에 자식 클래스가 붙어 있음
+
+
+        
+            NewMonster.Damage(NewPlayer); 
+    
+
+
+            
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

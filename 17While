@@ -1,0 +1,53 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _17While{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //while (참/거짓): bool값이 들어가면 된다.
+
+            bool Check = true
+            while (Check) // 조건문 체크 > 실행코드 > 조건문 체크... 반복
+            {
+                
+            }
+
+
+
+
+
+            do{ // 실행코드 > 조건문 체크 > 실행코드... 반복
+
+
+            } while (check);
+
+
+            
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

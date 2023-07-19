@@ -1,0 +1,85 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+   
+    }
+
+
+
+//기본기라고 생각하는 것이 3가지 있다.
+//1. 문자열 String: 동적 기본 자료형
+//2. 디버깅 (중단점, 메모리덤프)
+//3. 파일입출력
+
+
+//string은 char의 집합
+
+namespace _25String01{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //자료형은 c#에서 만들어 놓은 기본 구조체이다. < 중요
+            //연산자는 함수와 가깝다.
+
+
+            //int는 구조체이며 내부의 맴버변수나 함수가 존재하고 
+            //그것을 통해서 문자열로 변환을 해줄 수 있다. //미리 설정 되있는 것임.
+
+            
+            int AAA = new int();
+            AAA = 100;
+            Test = AAA.Tostring(); //AAA안에 있는 내용을 문자열로 바꿔서 Test에 리턴해줌.
+
+            Console.WriteLine(TEST); //100이 출력됨
+
+
+
+            string Left = "안녕하세요";
+            string Right = "날씨가 좋네요";
+
+            Console.WriteLine(Left + Right);
+
+            // string Result = Left + Right + AAA.Tostring;
+            // //안녕하세요 날씨가 좋네요 100
+
+            Console.WriteLine(Left + Right + AAA.Tostring);
+
+            // Console.WriteLine(Result)
+            // 위 두 코드를 이렇게 바꿀 수도 있다.
+            
+
+
+
+
+
+
+
+
+
+           
+
+
+            //TEST = AAA //< 성립할 수 없는 문장.
+
+            //stirng int.Tostring() > string을 리턴하는 int의 맴버 함수인 Tostring
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

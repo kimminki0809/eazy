@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+//정적클래스란 정적 맴버 변수와 정적 맴버 함수만을 가질 수 있는 클래스이다.
+static class StClass{
+
+}
+
+
+class Player{
+
+   
+    }
+
+
+namespace _15StaticClass{
+
+    class Program{
+
+        static void Main(String[] args){
+
+        }
+    }
+
+
+
+}
+

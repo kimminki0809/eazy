@@ -1,0 +1,80 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+    Private int HP = 100;
+    //맴버변수: 객체가 생기면 만들어지게 되는.
+
+    public void Damage(int _Dmg){
+
+        HP-= _Dmg;                                                                                                  
+
+    }
+
+
+    Private static int StTest = 100;
+
+    public static void PVP(Player _left, Player _right){
+
+        //HP = 1000; > 오류가 나는 이유: HP가 어떤 객체의 HP를 지정하는지 알 수 없음.
+        //이유 1. 정적 맴버 함수는 객체의 영향을 받지 않음
+        //2. 같은 정적 맴버 변수 만을 정적 맴버 함수 에서 사용 가능.
+
+        stTest = 50; //정적멤버변수
+
+    }
+
+
+    public int Damage(/*Player _this,*/ int _Dmg){
+        //맴버함수의 호출이란 우리에겐 보이진 않지만 this. 가 생각된 것이다.
+        //정적함수는 정적변수만이 영향을 미칠 수 있으므로 해당 예시에 맞지 않음.
+
+        // /**/ < 앞에 생략 된 부분임
+
+        /*_this.*/HP -= _Dmg;
+
+
+
+    }
+
+
+    }
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            Player NewPlayer1 = new Player();
+            Player NewPlayer2 = new Player();
+            Player NewPlayer3 = new Player();
+
+            NewPlayer2.Damage(100);
+            //C#은 어떻게 Damage 함수의 HP가 NewPlayer2의 HP인것을 알 수 있을까?
+            
+        
+
+
+            Player.PVP(NewPlayer1, NewPlayer2);
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

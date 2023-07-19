@@ -1,0 +1,15 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//01
+//객체지향 내가 표현하고 싶은걸 Class로 만들어서
+//그 Class로 객체를 만드는 프로그래밍이다.
+//class는 즉 설계도이다
+//class는 개념의 표현
+
+class Player{
+
+}

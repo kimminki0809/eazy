@@ -1,0 +1,175 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class FightUnit{
+
+
+    protected String Name = "NONE"; 
+    protected int AT = 10; 
+    protected int HP = 100;
+
+    // public virtual int GetAT(){
+    //     return AT;
+    // } //프로퍼티
+
+    public virtual int DMGAT{
+        get{
+            return AT;
+        }
+    } //getset 함수
+    //프로퍼티, getset함수는 오버라이딩 가능
+
+
+
+
+    public virtual void Damage(FightUnit _OtherFightUnit){
+
+
+     //오버로딩 FightUnit _OtherFightUnit인 인자값을 Player로 받으면 됨
+     //오버로딩 개념으로 보면 Damage Player라는 함수가 됨(FightUnit _OtherFightUnit의 인자값이 Player로 온거였어서.)
+
+
+        int AT = _OtherFightUnit.AT; 
+        //public int GetAT(){
+        //return AT;
+        //} 코드로 인해
+        //int AT = _OtherFightUnit.GetAT() 로 해도 됨.
+        
+
+
+
+        //_OtherFightUnit이 플레이어 것이라면 플레이어 만의 특수한 성질을 가져야할때는 오버라이딩을 사용
+        //상속의 개념을 가지기 위해 = 코드를 적게 치고 싶어서
+
+
+        //만약 protected int ItemAT값을 넣어주면 이 코드는 객체지향을 전면으로 부인하는 코드임. > 몬스터는 저 변수를 가질 필요가 없기 때문.
+    
+
+        Console.WriteLine(_OtherFightUnit.Name +"에게" +AT + "만큼의 데미지를 입었습니다.")
+
+        HP -= AT;
+
+
+    }
+
+}
+
+class Monster : FightUnit{
+
+     public Monster(string _Name){
+
+        Name = _Name;
+
+        
+    }
+
+}
+
+class Player : FightUnit{
+    int ItemAt = 5;//Player가 타격할때 무기AT를 포함한 값으로 때리게 하고 싶음.
+
+
+    //상속의 문제점: 자식 클래스 각각의 특수한 부분들을 구현하고 싶은데 그러기 쉽지않음
+
+    //방법 1. 오버로딩
+
+    //방법 2. 오버라이징 
+    //virtual : 부모 쪽에 붙임: 자식에서 부모의 GetAT를 재구현했다면 자식 형태의 GetAT를 호출해달라라는 것이다.
+    //override : 자식 쪽에 붙임: 나는 부모 클래스의 GetAT를 재구현했다.
+    
+
+
+    //상속관계에서 부모는 자식에 추가된 변수나 함수의 내용을 알지못함. 
+    //부모 클래스에 있는 함수 사용할때  자식에 추가된 변수를 포함 시키고 싶을때 사용함.
+    //Player로 호출했으면 
+    //업캐스팅을 무시하고 FightUnit의 AT를 호출해도 Player의 AT가 나오기를 바람
+
+
+    //이 문법의 핵심은 자식에서 부모의 GetAT를 재구현했다면 자식 형태의 GetAT를 호출해달라라는 것이다.
+    //다형성(동적바인딩)의 핵심문법 중 하나
+    //다형성: FightUnit으로 보이지만 Player로 호출된거일 수도 Monster로 호출된것 일 수도 있음.
+    //다형성의 예시: 업캐스팅
+
+
+    //현재 Monster를 호출할때는 부모 클래스인 FightUnit의  GetAT가 실행되는 반면
+    //Player을 호출하면 Player의 GetAT가 호출된다.
+
+
+    //생성자는 오버라이딩을 할 수 없다.
+    //프로퍼티는 오버라이딩을 할 수 있다. get set함수 또한 가능.
+    //static은 안됨: this가 없어서 안됨
+
+
+    //같은 이름의 함수나 프로퍼티를 구현하는 경우
+
+    //부모의 접근제한 지정자와 자식의 접근제한 지정자를 맞춰줘야함
+    //인자값 또한 똑같이 맞춰야함
+
+    
+
+
+
+    public int GetAT(){//부모도 자식도 둘다 GetAT를 가진다면 > 자식것을 호출함
+    //자식 클래스인 Player클래스의 GetAT는 
+    //부모 클래스인 FightUnit클래스의 GetAT를 숨김.
+
+    
+
+    public override int DMGAT(){
+        get{
+            return AT + ItemAt;
+
+        }
+    }   
+    }
+
+
+    public Player(string _Name){
+
+        Name = _Name;
+
+
+    }
+    }
+
+
+
+
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //Player NewPlayer = new Player(); // 안되는 이유: 생성자의 인자값을 string으로 받아줘야하기 때문임
+            Player NewMonster = new Player("노무현");
+            Monster NewMonster = new Monster("김대중");
+
+
+            NewPlayer.GetAT(); //부모도 자식도 둘다 GetAT를 가진다면 > 자식것을 호출함
+        //자식 클래스인 Player클래스의 GetAT는 
+        //부모 클래스인 FightUnit클래스의 GetAT를 숨김.
+
+
+            NewPlayer.Damage(NewMonster);//업캐스팅이 되므로 NewMontster이 인자값에 들어가도 됨
+            NewMonster.Damage(NewPlayer);
+
+
+            
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+
+

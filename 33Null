@@ -1,0 +1,43 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+    private int mAT;
+    public int AT {
+    
+    get {return mAT;}
+    set {mAT = value;}
+    
+    }
+}
+
+
+
+
+
+
+
+class Program{
+
+    static void Main(String[] args){
+
+        Player NewPlayer = new Player();
+        Player NewPlayer2 = null;
+        //가리키는게 없이 비워놓겠다는 뜻
+
+
+            
+
+
+    }
+}
+
+
+
+
+

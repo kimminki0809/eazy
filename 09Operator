@@ -1,0 +1,92 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+    int HP = 100;
+
+    void Damage(int _HP){
+        HP =- 10;    
+    }
+
+    public int/*리턴을 int형으로 해주기 위해 void가 아닌 int를 사용*/ Plus(int _Left, int _Right){
+        int Result = _Left + _Right
+
+        return Result;
+    }
+
+
+}
+
+
+namespace _09Operator{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //연산자는 함수와 비슷하다.
+
+            //연산자의 우선순위: 대입연산자는 오른쪽 부터 실행된다.
+            //산술연산자는 * / % 후에 + -가 처리된다. ()괄호 연산자는 연산자의 실행순서를 내가 지정해줄 수 있게된다.
+
+            int Result = 0;//대입 연산자. 함수에서 리턴된 값이나 혹은 연산이 된 값을 
+            //그 값을 받을 수 있는 변수에 넣어줘라. 리터럴 값도 대입연산자를 사용 
+            int Left =7;   //리터럴 값: 변수에 넣는 변하지 않는 데이터 값 : 초기값
+            int Right =3;
+
+
+            //산술연산자
+            Result = Left + Right; //더하기
+            Result = NewPlayer.Plus(Left, Right); // 지역변수 7과 3을 인자값을 사용해 다른 함수로 보내줌.(외부와의 소통을 한 것.)
+            Result = Left - Right; //빼기
+            Result = Left * Right; //곱하기
+            Result = Left / Right; //나누기
+            Result = Left % Right; //나머지
+
+
+
+            //비교연산자는 논리형으로 리턴
+            //논리형 중에 bool이라는 함수가 있다.
+            //bool은 참과 거짓이 상수화 된것이 true와 false이다.
+
+            bool BResult = true; //true나 false로 초기값(리터럴값)을 설정해줄 수 있다.
+            BResult = false;
+
+            BResult = Left < Right;
+            BResult = Left > Right;
+            BResult = Left <= Right;
+            BResult = Left >= Right;
+            BResult = Left == Right;
+            BResult = Left != Right;
+
+
+
+            //bool 논리연산자
+
+            BResult = true && true //AND
+            BResult = true || true //OR
+            BResult = true ^ true //XOR 입력 값이 서로 다를때만 true반환
+            BResult = !true //false(반대를 도출)
+
+
+            
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+
+
+}

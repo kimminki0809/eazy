@@ -1,0 +1,78 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+//상속은 이중 상속은 불가능하다.
+//그래서 만든 것이 인터페이스: 사용자 정의 자료형
+
+interface QUESTUNIT{
+
+    //1. 맴버변수를 안에 넣을 순 없다.
+    //2. 맴버함수 또한 마찬가지 이다.
+    //3. 함수를 선언만 해둠
+    //4. 물려주기만 하는 문법이라 private, protected는 못씀
+    void Talk(QUESTUNIT _OtherUnit);//인터페이스: 함수의 형태만 물려줄 수 있는 문법
+
+    //함수의 구현을 강제함 > 무조건 그 함수를 사용해야함
+    
+}
+
+class FightUnit{
+
+    int AT;
+    int DMG;
+
+    public void Damage(){
+    }
+}
+
+
+class Player : FightUnit, QUESTUNIT{
+
+    public void Talk(QUESTUNIT _OtherUnit){ //무조건 퍼블릭이어야함 //강제된 Talk 함수
+
+    }
+    }
+
+class NPC : FightUnit, QUESTUNIT{
+
+    public void Talk(QUESTUNIT  _OtherUnit){   
+    }   
+    }
+
+
+
+
+
+
+    class Program{
+
+        static void Main(String[] args){
+            Player NewPlayer = new Player();
+            NPC NewNPC = new NPC();
+
+            QUESTUNIT NewQusetunit = new QUESTUNIT; // 안되는 문장 > QUESTUNIT의 실체가 없기 때문에 새 객체를 만들지는 못함.
+
+
+            QUESTUNIT NewQusetunit = NewNPC; //이미 있는 실체로는 받을 수 있음
+            
+            NewQusetunit.Talk();
+
+
+            NewNPC.Talk();//업캐스팅이 된다.
+
+
+
+            
+
+
+        }
+    }
+
+
+
+
+

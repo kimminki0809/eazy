@@ -1,0 +1,106 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+
+    //정적맴버변수는 일반적인 맴버변수와 다르게 객체화를 하지 않고도 사용할 수 있다.
+    //사용법: 그 클래스의 이름만으로 사용 가능하다.
+
+    public static int PlayerCount = 0;
+    public int AT = 10;
+    public int HP = 100;
+
+    public void Setting(int _AT, int _HP){
+        PlayerCount = 100;
+
+        AT = _AT
+        HP = _HP
+    }
+
+   
+    }
+
+
+namespace _13StaticVars{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //new를 3번 사용했으니 플레이어는 3번 생긴 것
+            Player NewPlayer1 = new Player();
+            Player.PlayerCount = 1;
+            Player NewPlayer2 = new Player();
+            Player.PlayerCount = 2;
+            Player NewPlayer3 = new Player();
+            Player.PlayerCount = 3;
+            //PlayerCount 변수는 객체화를 하지 않고도 사용 할 수 있음: 정적맴버변수
+            //정적맴버변수는 데이터 영역에 들어가게 된다.
+
+
+            //정적맴버변수는 객체를 통해서 사용하는게 불가능하다.
+            //ex) NewPlayer3.PlayerCount;
+
+
+            //정적맴버변수는 클래스 내부 안에서는 사용이 가능하다.
+
+            //정적맴버변수는 모든 곳에서 공통된 값을 가진다.
+            //ex) 19열에서 PlayerCount = 100; 으로 바꾸어줬으면 모든 곳에서 100이 됨.
+
+            //정적맴버변수는 어떤 클래스 내부에서 모든 객체가 공유하는 값이 된다.
+
+            //정적맴버변수는 객체에 귀속된 것이 아니라 클래스 그 자체에 귀속 된다.
+        
+
+        
+
+
+
+            //이 맴버변수들은 각각 존재한다
+            NewPlayer1.Setting(10, 100);
+            NewPlayer2.Setting(50, 20);
+            NewPlayer3.Setting(100, 1000);
+
+
+
+            Monster NewMonster1 = new Monster();
+            Monster NewMonster2 = new Monster();
+            Monster NewMonster3 = new Monster();
+
+            NewMonster1.Death();
+            NewMonster2.Death();
+            NewMonster3.Death();
+
+
+
+            
+
+
+        }
+    }
+
+    class Monster{
+        int MonsterDeathCount; //지역변수로 사용하면 각 개체(NewMonster1, 2, 3)가 각자 MonsterDeathCount를 하나씩 증가시켜 각자 1이 출력됨.
+        //정적맴버변수를 이용해야 변수가 데이터에 저장되어 공통된 값을 가지게 되어 3이 출력 될 수 있음
+        //모든 객체를 정적맴버변수의 값을 공유할 수 있기 때문이다.
+
+        //전체 몬스터의 데스카운트를 세는게 목적이라면 정적변수를 사용하여야한다.
+
+        public void Death();{
+
+            MonsterDeathCount += 1;
+
+
+        }
+
+    }
+
+
+
+}
+

@@ -1,0 +1,52 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _00Using{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            int Test = 100;
+
+            if (Test == 100)//조건문 > 실행코드
+            {
+                
+            }
+            else if () //위 조건과 연계되어 위 조건이 false일때 아래조건을 참인지 거짓인지 판단한다.
+            {
+                
+            }
+
+            else //연계된 모든 조건이 거짓일때 실행
+            {
+
+            }
+
+
+            //이름 바꾸기 > 모든, 참조되는 변수까지 한번에 모두 변경 가능.
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

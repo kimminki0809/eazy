@@ -1,0 +1,139 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class GTest<T>{
+
+    T Data;
+   
+    }
+
+//KeyValvePair 함수
+namespace System{
+
+    namespace Collections{
+
+        namespace Generic{
+
+            struct MyTest<TKey, TValue>
+        }
+
+
+    }
+
+}
+
+
+
+
+
+namespace _DataStructEx{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            //제네릭이니까 Dictionary안에 List가 올 수도
+            //List안에 Dictionary가 올 수도 있다.
+
+            Dictionary<string, List<int>> NewDic;
+
+            List<Dictionary<string, int>> NewTest;
+
+
+
+
+            Dictionary<string, int> DicTest = new Dictionary<string, int>();
+
+            List<int> ListTest = new List<int>();
+            LinkedList<int> LinkedListTest = new LinkedListList<int>();
+
+            DicTest.Add("일", 1);
+            DicTest.Add("이", 2);
+            DicTest.Add("삼", 3);
+
+            ListTest.Add(1);
+            ListTest.Add(2);
+            ListTest.Add(3);
+
+            LinkedListTest.AddLast(1);
+            LinkedListTest.AddLast(2);
+            LinkedListTest.AddLast(3);
+
+            System.Collections.Generic.MyTest<int, int>Test;
+
+
+
+
+            //var: 그 시점에 가장 알맞은 자료형이 되어 준다
+
+            int number = 100;
+            var AA = number; //이 경우엔 var은 int가 됨
+
+            foreach (var item in ListTest)//자료구조를 넣어줌
+            {
+                Console.WriteLine(item);
+                
+            }
+
+
+            foreach (var item in LinkedListTest)//자료구조를 넣어줌
+            {
+
+                if (3 == item){
+
+                    break; // 1, 2만 출력되게 됨.
+                }
+
+
+                Console.WriteLine(item);
+                
+            }
+
+
+            foreach (var item in Dictionary)//아래 식은 다음과 같음 
+            {
+                Console.WriteLine(item);
+                
+            }
+
+            foreach (KeyValuepair<string, int> item in DicTest){
+
+                Console.WriteLine(item.Value); // 1 2 3 이 출력
+                //Value대신 Key를 넣으면 일 이 삼 이 출력
+            }
+
+            //foreach는 자동적으로 반복하는 문장으로서
+            //in을 통해서 각 배열이든 딕셔너리든 리스트든 내부의 자료를 그대로 순회할 수 있게 처리해줌
+
+            //var은 그때그때의 가장 적합한 자료형으로 처리 됨.
+            
+            //in은 자료구조에서 빼 온다라는 느낌.
+
+
+
+
+            //Dictionary의 var는
+            //Struct System.Collections.Generic.KeyValuepair<TKey, TValue>
+            //TKey는 string TValue는 int
+            //Dictionary를 for문 돌리기 위한 특별한 것임.
+
+            
+
+
+
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

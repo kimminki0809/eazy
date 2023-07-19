@@ -1,0 +1,135 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+    //한 클래스가 enum을 자기만 사용할때 enum을 class에 집어넣기도 한다. //inner enum 
+
+    enum PLAYERJOB
+    {
+        NOVICE,
+        KNIGHT,
+        FIGHTER,
+        BERSERKER,
+        FIREMAGE,
+    }
+    void ClassChange()
+    {
+    }
+}
+
+
+//빗금 친 부분은 InvenClass의 SelectIndex 변수의 리터럴(초기)값을
+//100으로 바꿔주는 코드임.
+
+
+
+
+
+class Inven{
+
+
+ ///////////////////////////////////////////////////////////////////////////   
+
+    SelectIndex = 0;
+
+
+    public void InnerClassTest(){
+
+        InvenSlot NewInvenSlot = new InvenSlot();
+        NewInvenSlot.Select(this); 
+        //Inven에서 InvenIcon 클래스의 함수인 Select를 사용하기 위해 
+        //해당 함수의 인자값인 Inven 클래스를 넣어주어야한다.
+        //이 경우 인자값으로 this를 쓴다. : 나 자신의 레퍼런스: this
+
+
+    }
+//////////////////////////////////////////////////////////////////////////    
+
+
+
+
+
+
+
+    void SelectMove(){ //인자값을 넣어주어야한다. 어떤 방향으로 이동할 것인가의 문제. //방향을 의미할만한 인자값이 필요
+    }
+
+
+
+
+
+public enum INVENDIR
+{
+    ID_UP,
+    ID_DOWN,
+    ID_RIGHT,
+    ID_LEFT,
+}
+
+
+
+// public class InvenIcon{ 
+
+//     void Select(){
+
+//         SelectIndex = 100; // 이너 클래스를 포함하고 있는 클래스라도 private형식이므로 사용할 수 있음
+
+
+//     }
+// } 
+
+
+
+//////////////////////////////////////////////////////////////////////////
+public class InvenIcon{ 
+
+    int Index;
+
+    public void Select(Inven _inven){
+
+        _inven.SelectIndex = 100; 
+        //자신을 가지고 있는 클래스의 맴버함수를
+        //마치 public 처럼 사용할 수 있다.
+
+
+    }
+}
+//////////////////////////////////////////////////////////////////////////
+    
+}
+
+
+
+
+
+
+
+namespace _35InnerUserDataType{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            Player NewPlayer = new Player();
+
+            Inven NewInven = new Inven();
+
+
+/////////////////////////////////////////////////////////////////////
+            NewInven.InnerClassTest();
+
+/////////////////////////////////////////////////////////////////////            
+
+            Inven.INVENDIR IDIR = Inven.INVENDIR.ID_LEFT();
+
+        }
+    }
+
+
+
+}
+

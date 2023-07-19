@@ -1,0 +1,75 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+struct StructData{ //값 형임
+
+//클래스와 비슷한데 안되는 것이 있다.
+//1. 리터럴 초기화가 안된다. ex) =100 이 안됨 
+//이유: =0 이 기본이라 그렇다.
+
+    public int a;
+    public int b;
+
+    public void Func(){
+
+        a = 100; //이런식으로 값을 설정 해줄 수 있다.
+        b = 100;
+    }
+}
+
+
+
+namespace _21Struct{
+
+    class Program{
+
+        static void Test(StructData _Data){
+
+            _Data.a = 1000;
+            
+            Number = 1000; //이 코드를 사용할 수 없는 이유: 
+
+            //지역변수: Test 함수가 종료됨과 동시에 할당한 메모리인 Number가 사라져서 무의미한 코드가 됨.
+            
+            //값형의 의미.
+            
+        }
+
+
+        static void Main(String[] args){
+
+            int Number = 100;
+
+            StructData NewData = new StructData();
+
+            NewData.a = 10;
+            NewData.b = 10;
+
+
+            Test(NewData); //NewData 구조체를 Test 메서드에 전달해줌.
+
+
+            //구조체는 함수에 들어갔다 나오면 값 형으로 처리 된다. 근본적으로 값 형.: 함수에 들어가면 새로운 구조체가 하나 더 생김.
+
+
+            //레퍼런스 형과의 차이
+            //레퍼런스 형은 힙에 존재하는 할당된 메모리를 가리켜서 자신은 값을 힙의 위치로 가지지만
+            //구조체는 스스로 스택에 존재하면서 값을 AT=10 과 같이 가짐.
+
+            //그러므로 1. 함수가 파괴되면 본체가 날라감.
+            //2. 타 함수에 들어가면 온전한 새로운 구조체가 하나 더 생긴다.
+
+            //이는 값형의 특징과 같은데, 구조체는 클래스 대신 사용할 수 있는 것이 큰 특징임.
+
+            
+        }
+    }
+
+
+
+}
+

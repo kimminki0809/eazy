@@ -1,0 +1,57 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+
+namespace _20Switch{
+
+    class Program{
+
+        static void Main(String[] args){
+
+
+            int switchTest = 100;
+
+
+            //switch 문은 대입 연산자 만의 연속이다 
+            
+            switch (switchTest){ //Case 100번째를 실행한다는뜻
+                case 0:
+                break;
+
+                case 1:
+                break;
+
+                case 100:
+                case 101:
+                Console.WriteLine("switchTest의 값은 100또는 101입니다.");
+                
+                default: //else의 역할을 함.
+                break;
+            }
+
+            //1. Left > Right가 괄호 안에 들어갔으면 bull값으로만 받아 true나 false
+            //2. 괄호 안에 대상이랑은 오직 상수랑만 비교할 수 있다. case 오른쪽에 상수가 들어가야함.
+
+
+            
+
+
+        }
+    }
+
+
+
+}
+

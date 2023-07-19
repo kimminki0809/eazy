@@ -1,0 +1,71 @@
+using System; //00 using은 다른 사람이 만들어둔 코드를 가져다 쓰겠다 라는 의미
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+class Player{
+
+   
+    }
+
+
+
+
+//_28Partial 네임스페이스가 있으면 사용할때 그냥 Player NewPlayer이 아니라
+//_28Partial.Player로 사용해주게 됨(눈엔 안보이지만)
+
+namespace _28Partial{
+
+    class Program{
+
+        static void Main(String[] args){
+
+            _28Partial.Player NewPlayer = new _28Partial.Player();
+
+            //using _28Partial; 을 using구문에 넣으면 그냥 Player로 사용가능 함
+
+            
+
+
+            
+
+
+        }
+    }
+
+
+}
+
+Partial class Monster{
+
+
+    public void Func1(){
+        
+    }
+
+    public void Func2(){
+        
+    }
+
+    public void Func3(){
+        
+    }
+
+    public void Func4(){
+        
+    }
+
+    public void Func5(){
+        
+    }
+
+    //class에 너무 많은 함수가 있을때 class앞에 Partial을 붙여준다
+
+    //떨어진 같은 클래스의 파일(변수 함수)을 partial로 합쳐줌
+
+    //파일이 쪼개졌지만 같은 클래스면 다른 곳에서도 사용 가능함
+    
+    }
+
